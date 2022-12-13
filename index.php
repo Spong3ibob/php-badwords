@@ -1,7 +1,9 @@
 <?php
     $text = "Guarda che bella giornata che c'è oggi sarebbe propio bello andare a sciare.";
-    $text2 = "Scrivi qui la tua password ";
-
+    $name = "bella";
+    if (strpos($text,$name)===false) echo "Parola '$name' NON trovata";
+    else echo "Parola '$name' trovata";
+    $text_modificato=str_replace(["$name",],"***",$text);
 ?>
 
 
@@ -16,9 +18,8 @@
 <body>
     <h1> <?php echo $text; ?></h1>
     <h3>Lunghezza: <?php echo strlen($text); ?> </h3>
-    <h1> <?php echo $text2, "***"; ?></h1>
-    <h3>Lunghezza: <?php echo strlen($text2); ?> </h3>
-    <h3>Password: <?php echo strlen($_GET["name"]); ?></h3>
+    <h1> <?php echo $text_modificato; ?></h1>
+    <h3>Lunghezza nuova: <?php echo strlen($text_modificato); ?> </h3>
 
 
 </body>
